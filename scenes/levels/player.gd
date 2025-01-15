@@ -32,6 +32,7 @@ func _process(delta):
 		#emit the position
 		var look_direction = (get_global_mouse_position() - position).normalized()
 		laser_signal.emit(selected_laser.global_position, look_direction)
+		$LaserVent.emitting = true
 		$LaserTimer.start()
 	if Input.is_action_pressed("secondary action") and can_grenade:
 		print('grenade')

@@ -7,6 +7,8 @@
 size = Vector2(330.5, 98.75)
 
 [node name="Gate" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 11
 script = ExtResource("1_lxwpy")
 
 [node name="GateImg" type="Sprite2D" parent="."]

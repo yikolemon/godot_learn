@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=4 uid="uid://cm887vlgeq6qb"]
+[gd_scene load_steps=18 format=4 uid="uid://cm887vlgeq6qb"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_1bx51"]
 [ext_resource type="Texture2D" uid="uid://db8n70f4bcue0" path="res://graphics/ground/stones.png" id="2_1dfa8"]
+[ext_resource type="PackedScene" uid="uid://butb36u4opfd5" path="res://steam_vent.tscn" id="3_1ekgg"]
 [ext_resource type="Texture2D" uid="uid://db2nwjvy2st02" path="res://graphics/decals/dirt_patch.png" id="3_swlmj"]
 [ext_resource type="PackedScene" uid="uid://bae3epp02y4uu" path="res://gate.tscn" id="3_u66c0"]
 [ext_resource type="PackedScene" uid="uid://x1afb0ualkws" path="res://scenes/levels/Player.tscn" id="4_aemo4"]
@@ -12,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cw63yj6lhhmay" path="res://graphics/decals/moss/moss_5.png" id="8_ir2i4"]
 [ext_resource type="Texture2D" uid="uid://b4tw7ssueuk3e" path="res://graphics/tilesets/outside_walls.png" id="9_odkyo"]
 [ext_resource type="Texture2D" uid="uid://7jrg5piu12t7" path="res://graphics/tilesets/soil.png" id="10_w1adm"]
-[ext_resource type="PackedScene" uid="uid://b1a2d7r3udlwi" path="res://house.tscn" id="11_ifkjs"]
+[ext_resource type="PackedScene" uid="uid://b1a2d7r3udlwi" path="res://scenes/items/house.tscn" id="11_ifkjs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_30shk"]
 resource_name = "walls"
@@ -59,6 +60,9 @@ position = Vector2(404, 809)
 texture = ExtResource("2_1dfa8")
 region_enabled = true
 region_rect = Rect2(-7138.56, -5971.25, 15223.6, 14251.1)
+
+[node name="SteamVent" parent="Ground/Soil" instance=ExtResource("3_1ekgg")]
+position = Vector2(502, -283)
 
 [node name="Decoration" type="Sprite2D" parent="Ground"]
 modulate = Color(0.672266, 0.821266, 1.54018e-06, 0.537255)
