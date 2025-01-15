@@ -10,10 +10,6 @@ height = 130.0
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ngiy1")
 
-[node name="PlayerImg" type="Sprite2D" parent="."]
-position = Vector2(6, -42)
-texture = ExtResource("1_8j03y")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_vnxsj")
 
@@ -23,6 +19,25 @@ one_shot = true
 [node name="GrenadeTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="LaserStartPositions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(133, 23)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(134, 33)
+
+[node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(133, 16)
+
+[node name="PlayerImg" type="Sprite2D" parent="."]
+position = Vector2(35, 5)
+rotation = 1.5708
+texture = ExtResource("1_8j03y")
+
+[node name="GrenadeStartPosition" type="Marker2D" parent="."]
+position = Vector2(135, 24)
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_time_out"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_ready"]
