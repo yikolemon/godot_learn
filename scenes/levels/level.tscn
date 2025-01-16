@@ -109,7 +109,7 @@ position = Vector2(547, -230)
 [node name="Porjectiles" type="Node2D" parent="."]
 
 [node name="House" parent="." instance=ExtResource("11_ifkjs")]
-position = Vector2(2718, 1970)
+position = Vector2(1271, 1457)
 rotation = -0.375246
 scale = Vector2(0.6, 0.6)
 

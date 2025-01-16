@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://x1afb0ualkws"]
+[gd_scene load_steps=6 format=3 uid="uid://x1afb0ualkws"]
 
 [ext_resource type="Texture2D" uid="uid://2ivxgqy2hyqj" path="res://graphics/player/player.png" id="1_8j03y"]
 [ext_resource type="Script" path="res://scenes/levels/player.gd" id="1_ngiy1"]
@@ -7,6 +7,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vnxsj"]
 radius = 65.0
 height = 130.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6inkd"]
+polygon = PackedVector2Array(-32, -41, -39, -42, -48, -39, -55, -33, -55, -26, -61, -19, -62, -7, -62, 6, -60, 14, -56, 20, -51, 19, -55, 24, -52, 33, -46, 37, -44, 44, -38, 51, -37, 57, -32, 62, -19, 66, -10, 65, 14, 58, 21, 52, 35, 48, 41, 45, 64, 46, 57, 50, 57, 55, 60, 57, 64, 58, 91, 57, 95, 55, 94, 49, 106, 41, 120, 42, 119, 36, 121, 36, 125, 38, 128, 37, 132, 29, 132, 18, 126, 10, 121, 13, 121, 11, 122, 9, 121, 6, 109, 7, 106, 1, 95, 1, 89, -5, 84, -7, 74, -5, 61, -19, 51, -25, 47, -25, 42, -33, 43, -35, 34, -44, 25, -56, 16, -57, 10, -54, 0, -55, -12, -52, -14, -51, -19, -53, -30, -47, -29, -44)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
@@ -43,6 +46,9 @@ position = Vector2(135, 24)
 
 [node name="LaserVent" parent="." instance=ExtResource("3_gjuwi")]
 position = Vector2(136, 23)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_6inkd")
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_time_out"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_ready"]
